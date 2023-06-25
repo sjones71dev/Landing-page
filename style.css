@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,300&display=swap');
 
 :root{
+    /* SET COLOR VARIABLES (CONVERTED TO RGBA) */
+
     --clr_dark_primary: rgba(31, 41, 55, 1);
-    --clr_light_primary: rgba(255,255,255,1);
+    --clr_light_primary: rgba(249, 250, 248,1);
     --clr_light_secondary: rgba(229, 231, 235,1);
     --clr_accent_primary: rgba(56, 130, 246,1);
 }
@@ -11,7 +13,207 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+a, a:visited, a:active{
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+}
+a:focus{
+    outline: none;
+}
+
+body{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
     font-family: 'Roboto', sans-serif;
     font-size: 400;
     color: var(--clr_dark_primary);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.container > * {
+    width: 1000px;
+    margin: 10px auto;
+}
+
+
+
+
+/* HEADER */
+
+header,footer{
+    background: var(--clr_dark_primary);
+    color: var(--clr_light_secondary);
+}
+header nav, 
+.menu,
+.header_content,
+.illustration_list,
+.action_container{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+header .logo{
+    margin-right: auto;
+    font-size: 24px;
+    color: var(--clr_light_primary);
+}
+header .menu{
+    font-size: 18px;
+}
+header .menu li{
+    padding: 2px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header .menu li a{
+    display: block;
+    border: 0px solid transparent;
+    border-bottom-width: 2px;
+    transition: border-color 0.3s linear;
+}
+header .menu li a:focus,
+header .menu li:hover a{
+    border-color: var(--clr_accent_primary);
+}
+
+
+.header_content{
+    padding: 50px 0;
+}
+.header_content > *{
+    width: 50%;
+}
+.header_content h1{
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--clr_light_primary);
+}
+.header_content p{
+    font-size: 18px;
+    width: 450px;
+}
+.header_content .header_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr_light_secondary);
+    background-color: rgba(255,255,255,0.5);
+}
+
+
+/* MAIN */
+main{
+    padding: 50px 0;
+    background: white;
+}
+main h2{
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+}
+.illustration_list{
+    padding: 40px 0;
+    justify-content: center;
+    gap: 40px
+}
+.illustration_list li{
+    width: 150px;
+}
+.illustration_list .list_img{
+    border: 3px solid var(--clr_accent_primary);
+    border-radius: 15px;
+    aspect-ratio: 1;
+}
+.illustration_list .list_subtext{
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 0;
+    display: block;
+}
+
+
+/* QUOTE AREA */
+
+section#quote{
+    width: 100%;
+    background: var(--clr_light_secondary);
+    display: flex;
+    justify-content: center;
+}
+#quote figure{
+    width: 740px;
+    margin: 70px auto;
+}
+blockquote{
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+}
+figcaption{
+    text-align: right;
+    font-weight: 500;
+    font-size: 18px;
+    padding-right: 20px;
+}
+
+/* ACTION AREA */
+
+#action{
+    background: var(--clr_accent_primary);
+    color: var(--clr_light_primary);
+    border-radius: 15px;
+    min-height: 150px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+#action h3{
+    font-weight: 900;
+    font-size: 22px;
+}
+
+/* FOOTER */
+
+footer{
+    padding: 20px 0;
+}
+footer span{
+    color: var(--clr_light_secondary);
+    font-size: 16px;
+    text-align: center;
+}
+
+/* SIGN UP BUTTON */
+
+button.action_btn{
+    border-radius: 5px;
+    padding: 5px 25px;
+    margin: 5px 0;
+    outline: none;
+    border: none;
+    background: var(--clr_accent_primary);
+    color: var(--clr_light_primary);
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    outline: 1px solid transparent;
+    transition: outline-color 0.3s linear;
+}
+button.action_btn.accent{
+    border: 1px solid var(--clr_light_primary);
+}
+button.action_btn:focus,
+button.action_btn:hover{
+    outline-color: var(--clr_light_primary);
 }
